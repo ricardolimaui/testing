@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="SitcomLab">
+  <link rel="canonical" href="http://giv-oct.uni-muenster.de/dev-corner/data/visualization/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  
+  <title>Visualization - Dev-Corner</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Visualization";
+    var mkdocs_page_input_path = "data/visualization.md";
+    var mkdocs_page_url = "/dev-corner/data/visualization/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-74601518-1', 'http://giv-oct.uni-muenster.de/dev-corner/');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Dev-Corner</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Installations</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../installations/nodejs/">Nodejs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../installations/bower/">Bower</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../installations/mkdocs/">MkDocs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../installations/cd/">Continuous Delivery</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Data</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../collection/">Collection</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../storage/">Storage</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Storage</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../storage/datastore-create/">Datastore_create</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../storage/datastore-delete/">Datastore_delete</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../storage/datastore-upsert/">Datastore_upsert</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../storage/package-create/">Package_create</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../retrieval/">Retrieval</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Retrieval</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../retrieval/datastore-search/">Datastore_search</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../retrieval/retrieve-specific-resource/">Retrieve a resource</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../retrieval/retrieve-from-ckangroup/">Retrieve from ckan group</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../analysis/">Analysis</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Visualization</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#description">Description</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#code">Code</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/licenses/">Licenses</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/repositories/">Repositories</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/contributors/">Contributors</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Dev-Corner</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Data &raquo;</li>
+        
+      
+    
+    <li>Visualization</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/ricardolimaui/testing.git/edit/master/docs/data/visualization.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="r-snippets-to-access-socrata-based-open-data-servers-example-1">R snippets to access Socrata-based open data servers (Example 1)<a class="headerlink" href="#r-snippets-to-access-socrata-based-open-data-servers-example-1" title="Permanent link">&para;</a></h3>
+<h5 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h5>
+<p>This example creates a map viewer by pulling a dataset from the NYC’s Open Data Portal containing a list of NYC Health and Hospitals Corporation Facilities</p>
+<h5 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h5>
+<pre><code class="language-r">library(&quot;RSocrata&quot;) # reading and writing to and from Socrata
+
+# human-readable URL
+url &lt;- &quot;https://data.cityofnewyork.us/Health/NYC-Health-and-Hospitals-Corporation-Facilities/ymhw-9cz9&quot;
+
+df.hhc &lt;- read.socrata(url)
+
+# type conversion
+df.hhc$Facility.Name &lt;- as.character(df.hhc$Facility.Name)
+df.hhc$Cross.Streets &lt;- as.character(df.hhc$Cross.Streets)
+df.hhc$Phone &lt;- as.character(df.hhc$Phone)
+df.hhc$Location.1 &lt;- as.character(df.hhc$Location.1)
+
+# data parsing to extract location 
+extract_location &lt;- function(x) 
+    return &lt;- unlist(gsub(&quot;[\\(\\)]&quot;, &quot;&quot;, regmatches(x, gregexpr(&quot;\\(.*?\\)&quot;, x))[[1]]))
+
+extract_latlon &lt;- function(x) 
+    return (unlist(strsplit(x, &quot;, &quot;)))
+
+extract_lat &lt;- function(x) 
+    return (as.numeric(x[1]))
+
+extract_lon &lt;- function(x) 
+    return (as.numeric(x[2]))
+
+location &lt;- lapply(df.hhc$Location.1, function(x) extract_location(x))
+location &lt;- lapply(location, function(x) extract_latlon(x[[1]]))
+
+df.hhc$Lat &lt;- sapply(location, function(x) extract_lat(x))
+df.hhc$Lon &lt;- sapply(location, function(x) extract_lon(x))
+
+# add the leaflet library to your script
+library(leaflet)
+
+# Similar to addCircleMarkers(addTitle(leaflet()))
+leaflet(data = df.hhc) %&gt;%
+    addTiles() %&gt;%
+        addCircleMarkers(
+            ~Lon, ~Lat, popup = ~as.character(Facility.Name), clusterOptions = markerClusterOptions())
+</code></pre>
+<h3 id="r-snippets-to-access-socrata-based-open-data-servers-example-2">R snippets to access Socrata-based open data servers (Example 2)<a class="headerlink" href="#r-snippets-to-access-socrata-based-open-data-servers-example-2" title="Permanent link">&para;</a></h3>
+<h5 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h5>
+<p>This example creates a map viewer (clustering) by pulling a dataset from the NYC’s Open Data Portal containing a list of NYC Health and Hospitals Corporation Facilities.</p>
+<h5 id="code_1">Code<a class="headerlink" href="#code_1" title="Permanent link">&para;</a></h5>
+<pre><code class="language-r">
+library(&quot;RSocrata&quot;) # reading and writing to and from Socrata
+
+# human-readable URL
+url &lt;- &quot;https://data.cityofnewyork.us/Health/NYC-Health-and-Hospitals-Corporation-Facilities/ymhw-9cz9&quot;
+
+df.hhc &lt;- read.socrata(url)
+
+# type conversion
+df.hhc$Facility.Name &lt;- as.character(df.hhc$Facility.Name)
+df.hhc$Cross.Streets &lt;- as.character(df.hhc$Cross.Streets)
+df.hhc$Phone &lt;- as.character(df.hhc$Phone)
+df.hhc$Location.1 &lt;- as.character(df.hhc$Location.1)
+
+# data parsing to extract location 
+extract_location &lt;- function(x) 
+    return &lt;- unlist(gsub(&quot;[\\(\\)]&quot;, &quot;&quot;, regmatches(x, gregexpr(&quot;\\(.*?\\)&quot;, x))[[1]]))
+
+extract_latlon &lt;- function(x) 
+    return (unlist(strsplit(x, &quot;, &quot;)))
+
+extract_lat &lt;- function(x) 
+    return (as.numeric(x[1]))
+
+extract_lon &lt;- function(x) 
+    return (as.numeric(x[2]))
+
+location &lt;- lapply(df.hhc$Location.1, function(x) extract_location(x))
+location &lt;- lapply(location, function(x) extract_latlon(x[[1]]))
+
+df.hhc$Lat &lt;- sapply(location, function(x) extract_lat(x))
+df.hhc$Lon &lt;- sapply(location, function(x) extract_lon(x))
+
+# add the leaflet library to your script
+library(leaflet)
+
+# Create a palette that maps factor levels to colors
+pal &lt;- colorFactor(c(&quot;navy&quot;, &quot;red&quot;, &quot;orange&quot;, &quot;purple&quot;), domain = df.hhc$Facility.Type)
+
+map &lt;- leaflet(data = df.hhc) %&gt;% 
+    addTiles(group = &quot;OSM (default)&quot;) %&gt;%
+    addProviderTiles(&quot;Stamen.Toner&quot;, group = &quot;Toner&quot;) %&gt;%
+    addProviderTiles(&quot;Stamen.TonerLite&quot;, group = &quot;Toner Lite&quot;) %&gt;%
+    addCircleMarkers(
+        ~Lon, ~Lat,
+        color = ~pal(Facility.Type),
+        stroke = FALSE, 
+          fillOpacity = 0.5,
+        popup= ~as.character(Facility.Name),
+        group = &quot;HHC&quot;
+    ) %&gt;%
+     # Layers control
+    addLayersControl(
+        baseGroups = c(&quot;OSM (default)&quot;, &quot;Toner&quot;, &quot;Toner Lite&quot;),
+        overlayGroups = c(&quot;HHC&quot;),
+        options = layersControlOptions(collapsed = FALSE)
+)
+map
+</code></pre>
+<h3 id="r-snippets-to-access-ckan-based-open-data-servers">R snippets to access CKAN-based open data servers<a class="headerlink" href="#r-snippets-to-access-ckan-based-open-data-servers" title="Permanent link">&para;</a></h3>
+<h5 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h5>
+<p>This example is pulling a dataset from the CivicData Open Data Portal containing 2014 Salt Lake City crime incidents.</p>
+<h5 id="code_2">Code<a class="headerlink" href="#code_2" title="Permanent link">&para;</a></h5>
+<pre><code class="language-r">url &lt;- &quot;http://civicdataprod1.cloudapp.net/storage/f/2014-07-07T16%3A17%3A25.958Z/2014.csv&quot;
+
+crimes &lt;- read.csv(file=url,head=TRUE,sep=&quot;,&quot;)
+nrow(crimes)
+head(crimes)
+str(crimes)
+
+# type conversion
+crimes$Address &lt;- as.character(crimes$Address)
+crimes$Description &lt;- as.character(crimes$Description)
+
+str(crimes)
+# levels to groups data
+table(crimes$Type)
+
+library(leaflet)
+
+num_colors &lt;- length(levels(crimes$Type))
+pal &lt;- colorFactor(topo.colors(num_colors), crimes$Type)
+
+map &lt;- leaflet(data = crimes) %&gt;% 
+    addTiles(group = &quot;OSM (default)&quot;) %&gt;%
+    addProviderTiles(&quot;Stamen.Toner&quot;, group = &quot;Toner&quot;) %&gt;%
+    addProviderTiles(&quot;Stamen.TonerLite&quot;, group = &quot;Toner Lite&quot;) %&gt;%
+    addCircleMarkers(
+        ~Longitude, ~Latitude,
+        color = ~pal(Type),
+        stroke = FALSE, 
+        fillOpacity = 0.5,
+        popup= ~as.character(Description),
+        group = &quot;Crimes&quot;
+    ) %&gt;%
+    # Layers control
+    addLayersControl(
+        baseGroups = c(&quot;OSM (default)&quot;, &quot;Toner&quot;, &quot;Toner Lite&quot;),
+        overlayGroups = c(&quot;Crimes&quot;),
+        options = layersControlOptions(collapsed = FALSE)
+    )
+map
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../about/licenses/" class="btn btn-neutral float-right" title="Licenses">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../analysis/" class="btn btn-neutral" title="Analysis"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://www.uni-muenster.de/Geoinformatics/">Institute for Geoinformatics, Münster</a>.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/ricardolimaui/testing.git/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../analysis/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../about/licenses/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

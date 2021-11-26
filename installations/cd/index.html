@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="SitcomLab">
+  <link rel="canonical" href="http://giv-oct.uni-muenster.de/dev-corner/installations/cd/">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  
+  <title>Continuous Delivery - Dev-Corner</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Continuous Delivery";
+    var mkdocs_page_input_path = "installations/cd.md";
+    var mkdocs_page_url = "/dev-corner/installations/cd/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-74601518-1', 'http://giv-oct.uni-muenster.de/dev-corner/');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Dev-Corner</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Installations</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../nodejs/">Nodejs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../bower/">Bower</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../mkdocs/">MkDocs</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Continuous Delivery</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#where-can-we-use-it">Where can we use it?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#second-listener">Second Listener</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Data</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../data/collection/">Collection</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../data/storage/">Storage</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Storage</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../data/storage/datastore-create/">Datastore_create</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../data/storage/datastore-delete/">Datastore_delete</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../data/storage/datastore-upsert/">Datastore_upsert</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../data/storage/package-create/">Package_create</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../data/retrieval/">Retrieval</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Retrieval</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../data/retrieval/datastore-search/">Datastore_search</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../data/retrieval/retrieve-specific-resource/">Retrieve a resource</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../data/retrieval/retrieve-from-ckangroup/">Retrieve from ckan group</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../data/analysis/">Analysis</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../data/visualization/">Visualization</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/licenses/">Licenses</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/repositories/">Repositories</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/contributors/">Contributors</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Dev-Corner</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Installations &raquo;</li>
+        
+      
+    
+    <li>Continuous Delivery</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/ricardolimaui/testing.git/edit/master/docs/installations/cd.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="what-is-continuous-deploymentdelivery">What is Continuous Deployment/Delivery?<a class="headerlink" href="#what-is-continuous-deploymentdelivery" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Continuous delivery (CD) is a software engineering approach in which teams produce software in short cycles, ensuring that the software can be reliably released at any time.[1] It aims at building, testing, and releasing software faster and more frequently. The approach helps reduce the cost, time, and risk of delivering changes by allowing for more incremental updates to applications in production. A straightforward and repeatable deployment process is important for continuous delivery.
+(Source: <a href="https://en.wikipedia.org/wiki/Continuous_delivery">Wikipedia</a>, 2016-03-21)</p>
+</blockquote>
+<h3 id="where-can-we-use-it">Where can we use it?<a class="headerlink" href="#where-can-we-use-it" title="Permanent link">&para;</a></h3>
+<p>We use CD for building automatically our documentation on our Main-Server. The following steps shows how we used it for MkDocs, but you can use the same technique also for your application, service or program.</p>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>First create a Webhook on GitHub in the repository-settings with the following URL: <code>http://giv-oct.uni-muenster.de:61440/github</code></li>
+<li>Login on the Main-Server and clone the repository of <strong>node-cd</strong></li>
+</ul>
+<p><strong>ATTENTION:</strong> There is already <strong>GEO-C-Version</strong> of the original <strong>node-cd</strong>-repository, so you can skip the steps which are marked with an <code>[*]</code>!</p>
+<p><strong>GEO-C-Version</strong>:</p>
+<pre><code>git clone https://github.com/geo-c/node-cd.git
+</code></pre>
+<p><code>[*]</code> <strong>Original version</strong>:</p>
+<pre><code>git clone https://github.com/A21z/node-cd.git
+</code></pre>
+<ul>
+<li>Install all dependencies with the following command:</li>
+</ul>
+<pre><code>sudo npm install
+</code></pre>
+<ul>
+<li><code>[*]</code> Update the file <code>/home/webteam/node-cd/github.sh</code> with the commands, which should run after a webhook-detection. For MkDocs we make a simple pull-request to download the latest files from our GitHub-repository and build the documentation:</li>
+</ul>
+<p>github.sh:</p>
+<pre><code>cd /home/webteam/Dev-Corner/ &amp;&amp; git pull &amp;&amp; sudo mkdocs build --clean
+</code></pre>
+<ul>
+<li>Make the file <code>/home/webteam/node-cd/github.sh</code> excecutable, and also excecutable by root-user! This is an important step, otherwise the commands can not be run:</li>
+</ul>
+<pre><code>chmod u+s github.sh
+</code></pre>
+<ul>
+<li><code>[*]</code> Update the file <code>/home/webteam/node-cd/config.js</code> with the correct folder-path, so it should look like this:</li>
+</ul>
+<pre><code class="language-javascript">action: {
+  exec: {
+    github: '/home/webteam/node-cd/github.sh',
+    bitbucket: './bitbucket.sh',
+    contentful: './contentful.sh'
+  }
+}
+</code></pre>
+<ul>
+<li>Add a cron-job for automatic start, when the Main-Server reboots with the command <code>sudo nano /etc/crontab</code> and add the following lines:</li>
+</ul>
+<pre><code># Automatic-Deployment-Server
+@reboot root node /home/webteam/node-cd/src/index.js
+</code></pre>
+<ul>
+<li>Finally restart the Main-Server, so that the Continuous Delivery System starts listening for commits on GitHub.</li>
+</ul>
+<pre><code>sudo shutdown -r 0
+</code></pre>
+<h3 id="second-listener">Second Listener<a class="headerlink" href="#second-listener" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If you want to checkout more than 1 repository, create in your new repository a new Webhook with a new portnumber, e.g. <code>http://giv-oct.uni-muenster.de:61441/github</code></li>
+<li>Clone the <strong>node-cd</strong>-repository again on the Main-Server</li>
+<li>Follow the same steps like above, but before starting the server, change the portnumber in the <code>/home/webteam/node-cd_2/config.js</code>-file: </li>
+</ul>
+<pre><code class="language-javascript">var Private = {
+  server: {port: '61441'},
+  ...
+}
+</code></pre>
+<ul>
+<li>Add a second cron-job and reboot again</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../data/collection/" class="btn btn-neutral float-right" title="Collection">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../mkdocs/" class="btn btn-neutral" title="MkDocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://www.uni-muenster.de/Geoinformatics/">Institute for Geoinformatics, Münster</a>.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/ricardolimaui/testing.git/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../mkdocs/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../data/collection/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
