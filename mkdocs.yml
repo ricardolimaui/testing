@@ -1,0 +1,50 @@
+site_name: Dev-Corner
+site_url: http://giv-oct.uni-muenster.de/dev-corner/
+site_description: Project documentation about the Open City Toolkit (OCT)
+site_author: SitcomLab
+site_favicon: img/favicon.ico
+# Local
+#site_dir: site
+# Server
+site_dir: /var/www/html/dev-corner
+
+repo_url: https://github.com/geo-c/Dev-Corner
+
+pages:
+- Home: index.md
+- Installations:
+    - Nodejs: installations/nodejs.md
+    - Bower: installations/bower.md
+    - MkDocs: installations/mkdocs.md
+    - Continuous Delivery: installations/cd.md
+- Data:
+    - Collection: data/collection.md
+    - Storage: data/storage.md
+    - Storage:
+        - Datastore_create: data/storage/datastore-create.md  
+        - Datastore_delete: data/storage/datastore-delete.md  
+        - Datastore_upsert: data/storage/datastore-upsert.md  
+        - Package_create: data/storage/package-create.md
+    - Retrieval: data/retrieval.md
+    - Retrieval:
+        - Datastore_search: data/retrieval/datastore-search.md
+        - Retrieve a resource: data/retrieval/retrieve-specific-resource.md
+        - Retrieve from ckan group: data/retrieval/retrieve-from-ckangroup.md
+    - Analysis: data/analysis.md
+    - Visualization: data/visualization.md
+- About:
+    - Licenses: about/licenses.md
+    - Repositories: about/repositories.md
+    - Contributors: about/contributors.md
+# - NewSection
+    #- newPage: newSection/newPage.md
+# - newSinlePage: newSinlePage.md
+
+theme: readthedocs
+
+markdown_extensions:
+    - toc:
+        permalink: true
+
+copyright: Copyright &copy; 2016 <a href="https://www.uni-muenster.de/Geoinformatics/">Institute for Geoinformatics, Münster</a>.
+google_analytics: ['UA-74601518-1', 'http://giv-oct.uni-muenster.de/dev-corner/']
